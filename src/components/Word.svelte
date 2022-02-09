@@ -11,10 +11,10 @@
     {#each Array($cols) as _, c}
         <div class="cell">
 
-            <!-- eğer mevcut satırda işlem yapılıyorsa -->
+            <!-- if processing on current row -->
             {#if $current === row}
 
-                <!-- geri silmede scale animasyonunu engellemek için kontrol gerekti -->
+                <!-- needed control to prevent scale animation on backspace -->
                 {#if $currentWord?.[c]}
                     {#key $currentWord?.[c]}
                         <div class="highlight" in:scale={{ opacity: 1, start: 1.1, duration: 100 }}>{($currentWord?.[c] ?? '').toLocaleUpperCase('TR')}</div>
@@ -23,7 +23,7 @@
                     <div></div>
                 {/if}
 
-            <!-- doldurulmuş kelime mevcut ise -->
+            <!-- if the filled word is present -->
             {:else if $currentWords?.[row]?.[c]}
                 {#key $currentWords[row][c]}
                     <div
