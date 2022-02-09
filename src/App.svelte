@@ -29,31 +29,31 @@
 
 	document.addEventListener('keyup', e => {
 
-		// harf geçerli bir harf ise ekle
+		// add if the letter is a valed letter
 		if (keys.includes(e.key.toLowerCase()) && $currentWord.length < $cols) {
 			$currentWord = [...$currentWord, e.key.toLowerCase()]
 		}
 
-		// mevcut kelimenin uzunluğu 0'dan büyükse bir azaltıp harfi çıkart
+		// If the current word's length is greater than 0, reduce it by one and subtract the letter.
 		if (e.key === 'Backspace') {
 			$currentWord.length = $currentWord.length > 0 ? $currentWord.length - 1 : 0
 		}
 
 		if (e.key === 'Enter') {
 
-			// kelime tamamlanmamışsa
+			// if the word is incomplete
 			if ($currentWord.length !== $cols) {
 				$message = true
 			} else {
 
-				// kelime tamamsa ve mevcut kelimelerde bulunuyorsa
-				// mevcut kelimelere ekleyip sonrakine geçir
+				// if the word is ok and found in existing words
+				// add to existing words and pass to the next
 				if ($allWords[$cols].includes($currentWord.join(''))) {
 
 					$currentWords = [...$currentWords, $currentWord]
 					$currentWord = []
 
-					// kazandı mı?
+					// did you win?
 					if ($currentWords.length > 0 && $currentWords.map(words => words.join('')).includes($randomWord.join(''))) {
 						$win = true
 					} else if ($currentWords.length === $rows) {
@@ -63,19 +63,19 @@
 					$current += 1
 
 				} else {
-					$message = 'Kelime bulunamadı'
+					$message = 'Word not found'
 				}
 			}
 		}
 	})
 
-	// ayarlar değişirse oyunu sıfırla
+	// reset the game if settings change
 	$: if ($cols || $rows) {
 		$currentWord = $currentWords = []
 		$current = 0
 	}
 
-	// kelime uzunluğu değiştirse rastgele kelimeyi değiştir
+	// change random word if word changes length
 	$: if ($cols) {
 		$randomWord = $allWords[$cols][Math.floor(Math.random() * $allWords[$cols].length)].split('')
 	}
