@@ -4,7 +4,7 @@
 	import Help from "./modals/Help.svelte";
 	import Settings from "./modals/Settings.svelte";
 
-	// !todo dinamik importa bakılacak
+	// !todo will look at dynamic import
 	let components = {
 		Help,
 		Settings
