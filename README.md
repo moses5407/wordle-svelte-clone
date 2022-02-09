@@ -1,10 +1,10 @@
 ## Wordle Svelte Clone
 
-Son zamanlarda popüler olan WORDLE uygulamasını svelte ile yapmaya çalıştım.
+I tried to make the recently popular WORDLE application with svelte.
 
-Bu tarz acaba yapsam nasıl yapardım uygulamarı bana çok fayda sağlıyor, size de tavsiye ederim :)
+I wonder how I would do this kind of application, it helps me a lot, I recommend it to you :)
 
-**Not:** Bazı eksiklikler var, mesela klavyede aksiyon olmaması gibi :D Ama bazı yeniliklerde var! Mesela kelime uzunluğunu ve tahmin sayısını belirlemek gibi.
+**Note:** There are some deficiencies, such as the lack of action on the keyboard :D But there are some innovations! For example, determining word length and number of predictions.
 
 ### Demo
 
