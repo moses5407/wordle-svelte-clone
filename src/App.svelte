@@ -20,7 +20,14 @@
 	import Modal from "./components/Modal.svelte";
 	import Win from "./components/modals/Win.svelte";
 	import Lose from "./components/modals/Lose.svelte";
-
+	// possibly add multiple keyboard letter lists for language selection?
+	
+	/*const keys = [
+		'q', 'w', 'e', 'r', 't', 'y', 'u', 'ı', 'o', 'p',
+		'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
+		'z', 'x', 'c', 'v', 'b', 'n', 'm'
+	]*/
+	
 	const keys = [
 		'q', 'w', 'e', 'r', 't', 'y', 'u', 'ı', 'o', 'p', 'ğ', 'ü',
 		'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ş', 'i',
