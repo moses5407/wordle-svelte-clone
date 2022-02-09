@@ -1,31 +1,31 @@
 import { writable } from 'svelte/store';
 import words from "./words";
 
-// olası mesajlar için
+// for possible messages
 export const message = writable(false);
 
-// kaç sütundan oluşacağı
+// How many columns will it consist of
 export const cols = writable(5);
 
-// kaç satırdan oluşacağı
+// How many lines will it consist of
 export const rows = writable(6);
 
-// kaçıncı satırda
+// on which line
 export const current = writable(0);
 
-// tüm kelimeler
+// all words
 export const allWords = writable(words)
 
-// seçilen rastgele kelime
+// chosen random word
 export const randomWord = writable(words[5][Math.floor(Math.random() * words[5].length)].split(''))
 
-// yazılan kelimeler
+// written words
 export const currentWords = writable([]);
 
-// yazılan mevcut kelime
+// current word typed
 export const currentWord = writable([]);
 
-// açık mod
+// open mode
 export const lightMode = writable(false)
 
 export const modal = writable(false)
